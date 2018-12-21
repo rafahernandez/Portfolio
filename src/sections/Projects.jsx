@@ -93,7 +93,7 @@ const SocialLinksContainer = styled.div`
   top: -220px;
 
   @media (min-width: 400px) {
-    top: -237px;
+    top: -210px;
   }
 `;
 
@@ -132,26 +132,31 @@ const Project = ({
           {publishedDate}
         </ImageSubtitle>
         <SocialLinksContainer>
-          <Label mx={1} fontSize={5}>
-            <SocialLink
-              color="primary"
-              hoverColor="primaryLight"
-              name="Check repository"
-              fontAwesomeIcon="github"
-              url={repositoryUrl}
-            />
-          </Label>
-          <Label mx={1} fontSize={5}>
-            <SocialLink
-              color="primary"
-              hoverColor="primaryLight"
-              fontSize={5}
-              mx={1}
-              name="See project"
-              fontAwesomeIcon="globe"
-              url={projectUrl}
-            />
-          </Label>
+            {repositoryUrl && 
+              <Label mx={1} fontSize={5}>
+                <SocialLink
+                  color="primary"
+                  hoverColor="primaryLight"
+                  name="Check repository"
+                  fontAwesomeIcon="github"
+                  url={repositoryUrl}
+                />
+              </Label>
+            }
+            {
+              projectUrl &&
+              <Label mx={1} fontSize={5}>
+                <SocialLink
+                  color="primary"
+                  hoverColor="primaryLight"
+                  fontSize={5}
+                  mx={1}
+                  name="See project"
+                  fontAwesomeIcon="globe"
+                  url={projectUrl}
+                />
+              </Label>
+            }
         </SocialLinksContainer>
       </ImageContainer>
     </Flex>
